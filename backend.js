@@ -11,7 +11,7 @@ app.use(cors())
 //Schema de usuário
 const usuarioSchema = mongoose.Schema({
   login: { type: String, required: true, unique: true },
-  senha: { type: String, required: true }
+  password: { type: String, required: true }
 })
 
 usuarioSchema.plugin(uniqueValidator)
@@ -25,9 +25,9 @@ async function conectarAoMongo() {
 app.post('/signup', async (req, res) => {
   try{
       const login = req.body.login
-      const senha = req.body.senha
-      const senhaCriptografada = await bcrypt.hash(senha, 10)
-      const usuario = new Usuario({login: login, senha: senhaCriptografada})
+      const password = req.body.password
+      const passwordCriptografada = await bcrypt.hash(password, 10)
+      const usuario = new Usuario({login: login, password: passwordCriptografada})
       const respMongo = await usuario.save()
       console.log(respMongo)
       res.end()
@@ -41,15 +41,15 @@ app.post('/signup', async (req, res) => {
 
 // Endpoint de login (apenas para usuarios existentes)
 app.post('/login', async (req, res) => {
-  const { login, senha } = req.body
+  const { login, password } = req.body
   // Verificando o usuário
   const usuarioExiste = await Usuario.findOne({ login: login })
   if (!usuarioExiste) {
     return res.status(401).json({ mensagem: "Login inválido" })
   }
   // Verificando a senha
-  const senhaValida = await bcrypt.compare(senha, usuarioExiste.senha)
-  if (!senhaValida) {
+  const passwordValida = await bcrypt.compare(password, usuarioExiste.password)
+  if (!passwordValida) {
     return res.status(401).json({ mensagem: "Senha inválida" })
   }
 

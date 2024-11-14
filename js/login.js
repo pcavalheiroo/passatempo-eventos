@@ -1,6 +1,22 @@
-document.getElementById('#loginButton').addEventListener('click', async () => {
-    const email = document.getElementById('#email').value;
-    const password = document.getElementById('#senha').value;
+document.getElementById('loginButton').addEventListener('click', async () => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove, timeout) {
+        let alert = document.querySelector(seletor);
+        alert.innerHTML = innerHTML;
+        alert.classList.add(...classesToAdd);
+        alert.classList.remove(...classesToRemove);
+        setTimeout(() => {
+            alert.classList.remove(...classesToAdd);
+            alert.classList.add(...classesToRemove);
+        }, timeout);
+    }
+
+    if (!email || !password) {
+        exibirAlerta('.alert', 'Preencha todos os campos!', ['alert-warning','show'], ['d-none'], 2000);
+        return;
+    }
 
     try {
         const response = await fetch('http://localhost:3000/login', {
@@ -8,20 +24,18 @@ document.getElementById('#loginButton').addEventListener('click', async () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ login: email, senha: senha})
+            body: JSON.stringify({ login: email, password: password })
         });
 
         if (response.ok) {
             const data = await response.json();
-            // Armazena o token em localStorage ou sessionStorage
             localStorage.setItem('token', data.token);
-            exibirAlerta('.alert-modal-login', 'Login Realizado com sucesso!!', ['show', 'alert-sucess'], ['d-none'], 2000)
-            // Redirecionar para a página principal ou dashboard
-            window.location.href = 'home.html';
+            exibirAlerta('.alert', 'Login realizado com sucesso!', ['alert-success','show'], ['d-none'], 2000);
         } else {
-            exibirAlerta('.alert-modal-login', 'Preencha todos os campos!!', ['show', 'alert-danger'], ['d-none'], 2000)
+            exibirAlerta('.alert', 'Não foi possível realizar o login!', ['alert-error' ,'show'], ['d-none'], 2000);
         }
-    } catch (e) {   
-        exibirAlerta('.alert-modal-login', 'Falha na autenticação!!', ['show', 'alert-warning'], ['d-none'], 2000)
+    } catch (e) {
+        console.error(e);
+        exibirAlerta('.alert', 'Erro ao tentar se conectar. Tente novamente mais tarde.', ['alert-error','show'], ['d-none'], 2000);
     }
 });

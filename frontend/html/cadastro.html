@@ -72,7 +72,7 @@
                     <img src="../svg/menu.svg" alt="Menu" id="menu-icon">
                 </div>
             </nav>
-            
+
             <!-- Mobile Navbar -->
 
             <nav class="mobile">
@@ -82,7 +82,7 @@
                     <li>
                         <a href="home.html">Home</a>
                     </li>
-    
+
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Eventos
                             <img src="../svg/down_arrow.svg" class="arrow-icon" alt="Seta">
@@ -92,19 +92,19 @@
                             <a href="corporativos.html">Corporativos</a>
                         </div>
                     </li>
-    
+
                     <li>
                         <a href="oficinas.html">Oficinas</a>
                     </li>
-    
+
                     <li>
                         <a href="saude.html">Saúde e Bem Estar</a>
                     </li>
-    
+
                     <li>
                         <a href="contato.html">Contato</a>
                     </li>
-    
+
                     <li>
                         <a href="login.html">Login</a>
                     </li>
@@ -129,7 +129,8 @@
 
         <section class="box_3">
 
-            <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave" style="top: 0; left: 0; transform: rotate(180deg);">
+            <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave"
+                style="top: 0; left: 0; transform: rotate(180deg);">
             <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave" style="bottom: 0; right: 0;">
 
             <div class="textfield">
@@ -142,7 +143,7 @@
                 <input type="password" name="senha" placeholder="Digite sua senha..." required>
             </div>
 
-            <button class="btn-login">Cadastrar</button>
+            <button class="btn">Cadastrar</button>
 
             <h2 style="margin: 30px;">
 
@@ -151,7 +152,7 @@
                     Voltar
                 </a>
             </h2>
-            
+
         </section>
 
     </main>
@@ -181,6 +182,17 @@
             <p class="copyright">© 2024 Passatempo Educativo | Todos os Direitos Reservados</p>
         </div>
     </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
     <script src="../../js/main.js" defer></script>
 </body>

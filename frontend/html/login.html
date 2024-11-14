@@ -82,7 +82,7 @@
                     <li>
                         <a href="home.html">Home</a>
                     </li>
-    
+
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Eventos
                             <img src="../svg/down_arrow.svg" class="arrow-icon" alt="Seta">
@@ -92,19 +92,19 @@
                             <a href="corporativos.html">Corporativos</a>
                         </div>
                     </li>
-    
+
                     <li>
                         <a href="oficinas.html">Oficinas</a>
                     </li>
-    
+
                     <li>
                         <a href="saude.html">Saúde e Bem Estar</a>
                     </li>
-    
+
                     <li>
                         <a href="contato.html">Contato</a>
                     </li>
-    
+
                     <li>
                         <a href="login.html">Login</a>
                     </li>
@@ -128,7 +128,10 @@
 
         <section class="box_3">
 
-            <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave" style="top: 0; left: 0; transform: rotate(180deg);">
+            <div class="alert d-none"></div>
+
+            <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave"
+                style="top: 0; left: 0; transform: rotate(180deg);">
             <img src="../svg/orange_wave.svg" alt="Onda laranja" class="orange_wave" style="bottom: 0; right: 0;">
 
             <div class="textfield">
@@ -137,17 +140,12 @@
             </div>
 
             <div class="textfield">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha..." required>
             </div>
 
             <button type="submit" class="btn" id="loginButton">Login</button>
 
-            <p style="margin: 30px;">
-                Deseja cadastrar um novo administrador? <br> <br>
-                <a href="cadastro.html">Clique aqui e faça o seu cadastro!</a>
-            </p>
-            
         </section>
 
     </main>
@@ -178,7 +176,19 @@
         </div>
     </footer>
 
-    <script src="../../js/main.js" defer></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="../../js/login.js" defer></script>
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>

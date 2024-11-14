@@ -4,13 +4,14 @@
   display: flex;
   border-radius: 20px;
   background-color: #FFBD57;
-  height: 120px;
-  margin-top: 70px;
+  height: 80px;
+  margin-top: 50px;
+
 }
 
 .title h1 {
   font-family: "Luckiest Guy";
-  font-size: 70px;
+  font-size: 40px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -22,13 +23,13 @@
   display: flex;
   border-radius: 20px 20px 0px 0px;
   background-color: #FFBD57;
-  height: 120px;
-  margin-top: 70px;
+  height: 80px;
+  margin-top: 50px;
 }
 
 .title_con h1 {
   font-family: "Luckiest Guy";
-  font-size: 70px;
+  font-size: 40px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -45,13 +46,13 @@
   border-radius: 0px 0px 20px 20px;
   background: rgba(255, 255, 255, 0.80);
   margin-top: 0;
-  padding: 40px;
+  padding: 30px;
   flex-wrap: wrap;
 }
 
 .subtitle p {
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -73,14 +74,14 @@
   justify-content: space-between;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.80);
-  margin-top: 70px;
+  margin-top: 50px;
   padding: 40px;
   flex-wrap: wrap;
 }
 
 .box_1 .left h1 {
   font-family: "Luckiest Guy";
-  font-size: 50px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -91,10 +92,10 @@
 
 .box_1 .left p {
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 130%;
 }
 
 .box_1 .left {
@@ -121,6 +122,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 60%;  
   width: 120%;
   height: auto;
   z-index: 1;
@@ -136,7 +138,7 @@
   justify-content: space-between;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.80);
-  margin-top: 70px;
+  margin-top: 50px;
   padding: 40px;
   flex-wrap: wrap;
 }
@@ -162,6 +164,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 60%;
   width: 120%;
   height: auto;
   z-index: 1;
@@ -169,7 +172,7 @@
 
 .box_2 .right h1 {
   font-family: "Luckiest Guy";
-  font-size: 50px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -180,7 +183,7 @@
 
 .box_2 .right p {
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -202,7 +205,7 @@
   height: auto;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.80);
-  margin-top: 70px;
+  margin-top: 50px;
   padding: 40px;
   position: relative;
   overflow: hidden;
@@ -211,7 +214,7 @@
 
 .box_3 h1 {
   font-family: "Luckiest Guy";
-  font-size: 50px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -226,7 +229,7 @@
 
 .box_3 p {
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -341,17 +344,18 @@ h2 a:hover {
 }
 
 .textfield label {
-  font-size: 2.5vw;
+  font-size: 2vw;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .textfield input {
   display: flex;
   border-radius: 20px;
-  width: 500px;
+  width: 35vw;
   padding: 15px;
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   outline: none;
   box-sizing: border-box;
@@ -366,7 +370,7 @@ h2 a:hover {
   border-radius: 20px;
   background-color: var(--yellow);
   font-family: "Luckiest Guy";
-  font-size: 4vw;
+  font-size: 3vw;
   font-style: normal;
   text-transform: uppercase;
   font-weight: 800;
@@ -391,10 +395,51 @@ h2 a:hover {
 ::placeholder {
   display: flex;
   font-family: Ubuntu;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   align-items: center;
   padding-left: 0px;
+}
+
+.d-none{
+  display: none;
+}
+
+.alert {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: ubuntu;
+  font-weight: bold;
+}
+
+.alert-success {
+  background-color: #16ce41;
+}
+
+.alert-error {
+  background-color: rgb(243, 29, 29);
+}
+
+.alert-warning {
+  background-color: rgb(253, 253, 76);
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+.d-none{
+  display: none;
 }
 
 /* Media Query */
@@ -520,7 +565,7 @@ h2 a:hover {
   }
 
   .btn-login {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 }
 
@@ -578,7 +623,7 @@ h2 a:hover {
   }
 
   .btn-login {
-    font-size: 7vw;
+    font-size: 3vw;
   }
 }
 
